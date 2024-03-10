@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block title %}Реєстрація{% endblock %}
+{% block content %}
+<div class="container">
+<form method="post" action="/register">
+  <div class="form-group">
+    <label for="nickname-input">Нікнейм</label>
+    <input type="text" name="nickname-input" id="nickname-input" class="form-control" placeholder="Введіть нікнейм">
+  </div>
+  <div class="form-group">
+    <label for="email-input">Емейл</label>
+    <input type="email" name="email-input" class="form-control" id="email-input" placeholder="Введіть емейл">
+    <small id="email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="password-input">Пароль</label>
+    <input type="password" name="password-input" class="form-control" id="password-input" placeholder="Введіть пароль">
+  </div>
+  <button type="submit" class="btn btn-primary">Підтвердити</button>
+</form>
+</div>
+{% endblock %}
