@@ -11,12 +11,22 @@ def main():
 
 @app.route('/articles')
 def articles():
-    return render_template("articles.html")
+    db = SQLManager("krutoj")
+    articles = db.select_articles()
+    return render_template("articles.html", articles=articles)
 
 
-@app.route('/create-article')
+@app.route('/create-article', methods=["GET", "POST"])
 def create_articles():
-    return render_template("create_article.html")
+    if request.method == "GET":
+        return render_template("create_article.html")
+    if request.method == "POST":
+        db = SQLManager('krutoj')
+        db.create_articles_table()
+        title = request.form["title-input"]
+        text = request.form["text-input"]
+        db.insert_articles(title, text)
+        return redirect(url_for("create_articles"))
 
 
 @app.route('/login', methods=["GET", "POST"])

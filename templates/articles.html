@@ -11,4 +11,9 @@
       </ul>
 </header>
 <h1>Статті</h1>
+<br>
+{% for article in articles %}
+    <h4>{{ article[0] }}</h4>
+    <p>{{ article[1] }}</p>
+{% endfor %}
 {% endblock %}

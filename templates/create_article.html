@@ -10,5 +10,17 @@
         <li class="nav-item"><a href="/register" class="nav-link">Реєстрація</a></li>
       </ul>
 </header>
-<h1>Створити статтю</h1>
+<div class="container">
+    <h2 style="text-align: center;">Створити статтю</h2>
+<form method="post" action="/create-article">
+  <div class="form-group">
+    <label for="title-input">Заголовок</label>
+    <input type="text" name="title-input" class="form-control" id="title-input" placeholder="Введіть заголовок"></div>
+  <div class="form-group">
+    <label for="text-input">Текст</label>
+      <textarea name="text-input" class="form-control" id="text-input" placeholder="Введіть текст"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Створити</button>
+</form>
+</div>
 {% endblock %}
