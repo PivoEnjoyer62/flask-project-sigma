@@ -65,3 +65,11 @@ class SQLManager:
         db_cursor.close()
         self.sql.commit()
         return data
+
+    def get_user_by_id(self, id):
+        db_cursor = self.sql.cursor()
+        db_cursor.execute(f"""
+        SELECT * FROM Users WHERE id=?
+        """, [id])
+        db_cursor.close()
+        self.sql.commit()

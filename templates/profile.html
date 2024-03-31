@@ -1,10 +1,10 @@
 {% extends "index.html" %}
-{% block title %}Головна{% endblock %}
+{% block title %}Профіль{% endblock %}
 {% block content %}
 <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link">Головна</a></li>
-        <li class="nav-item"><a href="/articles" class="nav-link active" aria-current="page">Статті</a></li>
+        <li class="nav-item"><a href="/articles" class="nav-link">Статті</a></li>
         {% if is_logged_in %}
           <li class="nav-item"><a href="/create-article" class="nav-link">Створити статтю</a></li>
         {% endif %}
@@ -13,14 +13,9 @@
         <li class="nav-item"><a href="/register" class="nav-link">Реєстрація</a></li>
         {% endif %}
         {% if is_logged_in %}
-          <li class="nav-item"><a href="/profile" class="nav-link">Профіль</a></li>
+          <li class="nav-item"><a href="/profile" class="nav-link active" aria-current="page">Профіль</a></li>
         {% endif %}
       </ul>
 </header>
-<h1>Статті</h1>
-<br>
-{% for article in articles %}
-    <h4>{{ article[0] }}</h4>
-    <p>{{ article[1] }}</p>
-{% endfor %}
+<h2>Профіль користувача</h2>
 {% endblock %}
